@@ -305,7 +305,7 @@ class Classification(nn.Module):
         return output
 
 def run_classification(*,TRMmodel,classify_model,data,classify_label,lr,epoch):
-    optimizer = optim.Adam(classify_model.parameters(), lr=lr, weight_decay=1.0)
+    optimizer = optim.Adam(classify_model.parameters(), lr=lr, weight_decay=0.01)
     criterion = nn.MSELoss()
     LossRecord = []
     for _ in tqdm(range(epoch)):

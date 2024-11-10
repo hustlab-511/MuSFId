@@ -99,7 +99,7 @@ def run_United_model(epoch, Pathlist):
     target = target.to(device)
     print('--------------掩码+对比学习-------------------')
     for i in range(1):
-        model = train_United_Model(model=model, data=data, origin=origin, target=target, persons=persons, elementlength=elementlength, lr=0.0005, epoch=epoch)
+        model = train_United_Model(model=model, data=data, origin=origin, target=target, persons=persons, elementlength=elementlength, lr=0.001, epoch=epoch)
 
     torch.save(model,'Save_Model/United_model_device.pth')
 

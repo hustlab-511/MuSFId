@@ -65,8 +65,8 @@ class FingerPrint(nn.Module):
         output_data = self.classify(output_data)
         return output_data.squeeze(1)
 
-def train_FingerPrint(*, model, data, label, target, lr=0.0001, epoch=2):
-    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=1.0)
+def train_FingerPrint(*, model, data, label, target, lr=0.001, epoch=2):
+    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=0.01)
     # dataset = Data.TensorDataset(data, label, target)
     # loader = Data.DataLoader(dataset=dataset, batch_size=3, shuffle=True)
     criterion = nn.MSELoss()

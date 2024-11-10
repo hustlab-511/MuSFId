@@ -36,8 +36,8 @@ class Metric_Model(nn.Module):
 
 # 引入流形
 # data 1000(50人*20) * 300
-def train_Metric_Model(*, model, data, label, target, lr=0.0001, epoch=2):
-    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=1.0)
+def train_Metric_Model(*, model, data, label, target, lr=0.001, epoch=2):
+    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=0.01)
     dataset = Data.TensorDataset(data, label)
     loader = Data.DataLoader(dataset=dataset, batch_size=3, shuffle=True)
     criterion = nn.MSELoss()

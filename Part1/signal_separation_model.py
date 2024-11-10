@@ -78,7 +78,7 @@ class predictNet(nn.Module):
 
 
 def trainPredictNet(*,model,data,T,lr=0.001,epoch=10):
-    optimizer = optim.Adam(model.parameters(),lr=lr,weight_decay=1.0)
+    optimizer = optim.Adam(model.parameters(),lr=lr,weight_decay=0.01)
     criterion = nn.MSELoss()
     relu = torch.nn.ReLU()
     LossRecord = []
